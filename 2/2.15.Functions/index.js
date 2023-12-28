@@ -189,3 +189,15 @@ function min(a, b) {
 
 console.log(min(10, -1));
 console.log(minWithIfElse(10, -1));
+
+// Function pow(x, n)
+// Write a function pow(x,n) that returns x in power n. Or,
+// in other words, multiplies x by itself n times and returns the result.
+function pow(x, n) {
+  let sum = x;
+  for (let i = 1; i < n; i++) {
+    sum *= x;
+  }
+  return sum;
+}
+console.log(pow(1, 100));
