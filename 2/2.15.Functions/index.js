@@ -158,3 +158,34 @@ function isPrime(n) {
 
 console.log(isPrime(5));
 console.log(showPrimes(10));
+
+// Rewrite the function using "?" or "||"
+// function checkAgeFinal(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return confirm("Did parents allow you?");
+//   }
+// }
+
+function checkAgeFinal(age) {
+  return age > 18 ? true : console.log("Did parents allow you?");
+}
+
+console.log(checkAgeFinal(19));
+
+// Function min(a, b)
+// Write a function min(a,b) which returns the least of two numbers a and b.
+function minWithIfElse(a, b) {
+  if (a < b) {
+    return a;
+  }
+  return b;
+}
+
+function min(a, b) {
+  return a < b ? a : b;
+}
+
+console.log(min(10, -1));
+console.log(minWithIfElse(10, -1));
