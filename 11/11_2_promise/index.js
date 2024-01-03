@@ -6,6 +6,8 @@
 //   .catch((error) => console.log(error))
 //   .finally(() => console.log("Finish"));
 
+const { error } = require("console");
+
 // const loadscript = (src) => {
 //   return new Promise((resolve, reject) => {
 //     let script = document.createElement("script");
@@ -34,4 +36,25 @@ const delay = (ms) => {
   });
 };
 
-delay(3000).then(() => alert(`Run after 3 seconds`));
+// delay(3000).then(() => console.log(`Run after 3 seconds`));
+
+const doSomethingFirst = (condition) => {
+  return new Promise((resolve, reject) => {
+    if (condition) resolve("SUCCESS");
+    reject("FAILED AD THE FIRST ATTEMPT");
+  });
+};
+const printing = (string) => {
+  console.log(string);
+  return string;
+};
+doSomethingFirst(false)
+  .then((result) => {
+    return printing(result);
+  })
+  .then((result) => {
+    return printing(result);
+  })
+  .then((result) => printing(result))
+  .catch((error) => console.log(error))
+  .finally(console.log("FINISH DOING THINGS"));
