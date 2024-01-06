@@ -18,7 +18,7 @@
 
 new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("Not URI ERROR");
+    reject("Not URI ERROR");
   }, 1000);
 })
   .catch((error) => {
@@ -32,7 +32,7 @@ new Promise((resolve, reject) => {
     console.log(`Result: ${result}`);
   })
   .catch((error) => {
-    console.log(`The unknown error has occured: ${error.message}`);
+    console.log(`The unknown error has occured: ${error}`);
   });
 
 const taskOne = () => {
